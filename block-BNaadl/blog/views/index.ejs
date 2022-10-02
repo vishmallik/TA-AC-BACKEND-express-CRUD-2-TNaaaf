@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to my <%= title %>
+  </p>
+  <div>
+    <h2>Create new Article</h2>
+    <form action="/articles/new" method="post" class="flex">
+      <input type="text" name="title" placeholder="Add Title">
+      <input type="text" name="author" placeholder="Add Author">
+      <textarea name="description" cols="30" rows="10" placeholder="Add Description"></textarea>
+      <input type="text" name="tags" placeholder="Add Tags">
+      <input type="submit" value="Create new article">
+    </form>
+  </div>
+
+
+  <a href="/articles"><button>Show Articles</button></a>
+</body>
+
+</html>
