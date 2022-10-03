@@ -43,6 +43,15 @@ router.get("/:id/edit", (req, res, next) => {
 });
 
 router.post("/new", (req, res, next) => {
+  req.body.tags = req.body.tags
+    .trim()
+    .split(",")
+    .reduce((acc, tag) => {
+      if (tag) {
+        acc.push(tag.trim());
+      }
+      return acc;
+    }, []);
   Article.create(req.body, (err, article) => {
     if (err) return next(err);
     res.redirect("/articles");
@@ -50,6 +59,15 @@ router.post("/new", (req, res, next) => {
 });
 
 router.post("/:id", (req, res, next) => {
+  req.body.tags = req.body.tags
+    .trim()
+    .split(",")
+    .reduce((acc, tag) => {
+      if (tag) {
+        acc.push(tag.trim());
+      }
+      return acc;
+    }, []);
   let id = req.params.id;
   Article.findByIdAndUpdate(id, req.body, (err, updatedArticle) => {
     if (err) return next(err);

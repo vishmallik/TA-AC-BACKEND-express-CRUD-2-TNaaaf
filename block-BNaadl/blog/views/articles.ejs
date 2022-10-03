@@ -11,14 +11,20 @@
 
 <body>
     <header>
-        <h1>List of All Articles</h1>
+        <nav>
+            <h1>List of All Articles</h1>
+            <a href="/"><button class="button-64 button-65">Back to home</button></a>
+        </nav>
     </header>
-    <main>
-        <% articles.forEach((article)=>{ %>
-            <a href="/articles/<%= article._id%>" class="article">
-                <%= article.title %>
-            </a>
-            <% }) %>
+    <main class="articles">
+        <section class="container">
+            <% articles.forEach((article)=>{ %>
+                <a href="/articles/<%= article._id%>" class="article">
+                    <%= article.title %>
+                </a>
+                <% }) %>
+        </section>
+
     </main>
     <footer>
 
