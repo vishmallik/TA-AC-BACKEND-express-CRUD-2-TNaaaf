@@ -12,24 +12,37 @@
 </head>
 
 <body>
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcome to my <%= title %>
-  </p>
-  <div>
-    <h2>Create new Article</h2>
-    <form action="/articles/new" method="post" class="flex">
-      <input type="text" name="title" placeholder="Add Title">
-      <input type="text" name="author" placeholder="Add Author">
-      <textarea name="description" cols="30" rows="10" placeholder="Add Description"></textarea>
-      <input type="text" name="tags" placeholder="Add Tags">
-      <input type="submit" value="Create new article">
-    </form>
-  </div>
+  <nav>
+    <h1>
+      <%= title %> App
+    </h1>
+  </nav>
+
+  <section class=" hero">
+    <div class="container">
+      <p>Welcome to my <%= title %>
+      </p>
+      <article class="flex">
+        <div>
+          <a href="/articles" class="aticle-btn"><button class="button-64">Show Articles</button></a>
+        </div>
+        <div class=" form-control">
+          <h2>Create new Article</h2>
+          <form action="/articles/new" method="post" class="flex-form">
+            <input type="text" name="title" placeholder="Add Title">
+            <input type="text" name="author" placeholder="Add Author">
+            <textarea name="description" cols="30" rows="10" placeholder="Add Description"></textarea>
+            <input type="text" name="tags" placeholder="Add Tags">
+            <input type="submit" value="Create new article">
+          </form>
+        </div>
+    </div>
+    </article>
+
+  </section>
 
 
-  <a href="/articles"><button>Show Articles</button></a>
+
 </body>
 
 </html>
