@@ -7,8 +7,17 @@ const bookSchema = new Schema({
   pages: { type: Number, default: 0 },
   publication: String,
   cover_image: String,
-  category: [String],
-  author: { type: Schema.Types.ObjectId, ref: 'Author', required: true },
+  category: [
+    {
+      type: String,
+      enum: ['fiction', 'adventure', 'technology', 'motivation'],
+    },
+  ],
+  author: {
+    name: { type: String, required: true },
+    email: String,
+    country: String,
+  },
 });
 
 module.exports = mongoose.model('Book', bookSchema);

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Add new book</title>
+</head>
+
+<body class="container padding">
+    <header>
+        <h1>Add new book</h1>
+    </header>
+    <main>
+        <form action="/books" method="post" class="flex flex-column">
+            <input type="text" name="title" id="" placeholder="Title">
+            <textarea name="summary" id="" cols="30" rows="10" placeholder="Book Summary"></textarea>
+            <input type="text" name="pages" id="" placeholder="Numbers of Pages">
+            <input type="text" name="publication" id="" placeholder="Publication">
+            <input type="text" name="cover_image" id="" placeholder="Cover image URL">
+            <input type="text" name="category" id="" placeholder="Category">
+            <input type="text" name="author.name" placeholder=" Author name">
+            <input type="text" name="author.email" placeholder=" Author email">
+            <input type="text" name="author.country" id="" placeholder="Author country">
+            <input type="submit">
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

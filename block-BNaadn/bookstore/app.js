@@ -6,12 +6,12 @@ const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/bookstore', (err) =>
+mongoose.connect('mongodb://127.0.0.1/bookstore', (err) =>
   console.log(err || 'Connected to Database')
 );
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const booksRouter = require('./routes/books');
 
 const app = express();
 
@@ -25,16 +25,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   sassMiddleware({
-    src: path.join(__dirname, 'public'),
+    src: path.join(__dirname, 'public/stylesheets'),
     dest: path.join(__dirname, 'public'),
-    indentedSyntax: false, // true = .sass and false = .scss
+    indentedSyntax: true, // true = .sass and false = .scss
     sourceMap: true,
+    force: true,
   })
 );
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/books', booksRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

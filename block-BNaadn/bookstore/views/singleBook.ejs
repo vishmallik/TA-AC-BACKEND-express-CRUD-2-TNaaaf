@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>
+        <%=book.title%>
+    </title>
+</head>
+
+<body>
+    <header class="flex">
+        <h1>Book Details</h1>
+        <nav>
+            <a href="/books">Back to book list</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="flex">
+                <div>
+                    <img src="<%=book.cover_image%>" alt="<%=book.title%>">
+                </div>
+                <h3>
+                    <%=book.title%>
+                </h3>
+                <h4>
+
+                    <%=book.author.name%>
+                </h4>
+                <div>
+                    <% book.category.forEach((category)=>{ %>
+                        <span>
+                            <%=category%><span />
+                                <% }) %>
+                </div>
+                <p>
+                    <%=book.publication%>
+                </p>
+                <p>
+                    <%=book.pages%>
+                </p>
+
+            </div>
+            <div>
+                <%=book.summary%>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
