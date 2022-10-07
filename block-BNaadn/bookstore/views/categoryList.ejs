@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Book Categories</title>
+</head>
+
+<body>
+    <header class="flex text-center bg-teal-700 text-white relative">
+        <h1 class="text-5xl py-5  mx-auto">List of all Book Categories</h1>
+        <nav class="absolute right-6">
+            <a href="/"
+                class=" hover:text-yellow-400 hover:border-yellow-400 border-solid border-white rounded-lg border-2 py-2 px-4 text-lg">Back
+                to home</a>
+        </nav>
+    </header>
+    <main class="bg-yellow-100 h-screen pt-8">
+
+        <section>
+
+            <% category.forEach(category=>{ %>
+                <div class="flex flex-column">
+                    <a href="/books/category/<%=category%>"
+                        class="text-4xl font-medium py-3 text-rose-400 hover:text-gray-800">
+                        <%= category %>
+                    </a>
+                </div>
+                <%})%>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

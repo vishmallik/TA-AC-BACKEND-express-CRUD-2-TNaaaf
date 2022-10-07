@@ -5,39 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Book list</title>
 </head>
 
 <body>
-    <header>
-        <h1>List of all Books</h1>
+    <header class="flex text-center bg-teal-700 text-white relative">
+        <h1 class="text-5xl py-5  mx-auto">List of all Books</h1>
+        <nav class="absolute right-6">
+            <a href="/"
+                class="border-solid border-white rounded-lg border-2 py-2 px-4 text-lg hover:text-yellow-400 hover:border-yellow-400">Back
+                to Home
+            </a>
+        </nav>
+
     </header>
-    <main>
-        <section>
+    <main class="bg-yellow-100  pt-8">
+        <section class=" flex container flex-wrap !justify-start">
             <% bookList.forEach(book=>{%>
-                <div class="flex">
-                    <img src="<%= book.cover_image %>" alt="<%=book.title%>">
-                    <h3>
+                <div class="basis-1/4 px-10 py-5 pb-14">
+                    <img class="w-full" src="<%= book.cover_image %>" alt="<%=book.title%>">
+                    <h3 class="text-2xl py-3">
                         <%=book.title%>
                     </h3>
-                    <h4>
+                    <h4 class="text-xl font-semibold py-1">
                         <%=book.author.name%>
                     </h4>
 
-                    <p>Category:
+                    <p class="text-lg"><span class="font-bold">Category:</span>
                         <% book.category.forEach(category=>{%>
                             <span>
-                                <%= category%>
+                                <%= category%>,
                             </span>
                             <%})%>
                     </p>
-                    <a href="/books/<%= book._id%>">Read More..</a>
+                    <a class="text-sm text-blue-500 text-left " href="/books/<%= book._id%>">Read More..</a>
                 </div>
 
                 <%})%>
 
         </section>
+
+
 
     </main>
     <footer>

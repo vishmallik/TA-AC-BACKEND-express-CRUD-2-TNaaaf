@@ -9,14 +9,27 @@
 </head>
 
 <body>
-  <h1>
-    <%= title %>
-  </h1>
-  <section>
-    <a href="/books">List of all books</a>
-    <a href="/books/author">List of books by author</a>
-    <a href="/books/category">List of books by category</a>
-
+  <header class="flex text-center bg-teal-700 text-white relative">
+    <h1 class="text-5xl py-5  mx-auto">
+      <%= title %>
+    </h1>
+    <nav class="absolute right-6 ">
+      <a href="/books/new"
+        class="hover:text-yellow-400 hover:border-yellow-400 border-solid border-white rounded-lg border-2 py-2 px-4 text-lg">Add
+        new book</a>
+    </nav>
+  </header>
+  <main class="bg-yellow-100 h-screen pt-8">
+    <section class="flex flex-col container py-10 ">
+      <a href="/books" class="text-yellow-500 text-4xl underline my-5 hover:text-red-400 items-start ">List of all
+        books</a>
+      <a href="/books/author" class="text-yellow-500 text-4xl underline my-5 hover:text-red-400 items-start ">List of
+        books by
+        author</a>
+      <a href="/books/category" class="text-yellow-500 text-4xl underline my-5 hover:text-red-400 items-start ">List of
+        books by
+        category</a>
+  </main>
   </section>
 
 </body>
