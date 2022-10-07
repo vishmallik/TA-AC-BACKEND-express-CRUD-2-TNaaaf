@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>
+        <%=book.title%>
+    </title>
+</head>
+
+<body>
+    <header class="flex text-center bg-teal-700 text-white relative">
+        <h1 class="text-5xl py-5  mx-auto">Book Details</h1>
+        <nav class="absolute right-6">
+            <a href="/books"
+                class=" hover:text-yellow-400 hover:border-yellow-400 border-solid border-white rounded-lg border-2 py-2 px-4 text-lg">Back
+                to book
+                list</a>
+        </nav>
+    </header>
+    <main class="bg-yellow-100  pt-8">
+        <section class="container">
+            <div class="flex !items-start">
+                <div class="basis-1/6 ">
+                    <img src="<%=book.cover_image%>" alt="<%=book.title%>">
+                </div>
+                <div class="text-left basis-10/12 px-8">
+
+                    <h3 class="text-4xl py-3">
+                        <strong class="font-semibold">Title:</strong>
+                        <%=book.title%>
+                    </h3>
+                    <h4 class="text-3xl py-3">
+                        <strong class="font-semibold">Author:</strong>
+                        <%=book.author.name%>
+                    </h4>
+                    <div class="text-2xl py-3">
+                        <strong class="font-semibold">Category:</strong>
+                        <% book.category.forEach((category)=>{ %>
+                            <span>
+
+                                <%=category%>,<span />
+                                    <% }) %>
+                    </div>
+                    <p class="text-2xl py-3">
+                        <strong class="font-semibold">Publisher:</strong>
+                        <%=book.publication%>
+                    </p>
+                    <p class="text-2xl py-3">
+                        <strong class="font-semibold">Pages: </strong>
+                        <%=book.pages%>
+                    </p>
+                    <p class="text-2xl py-3">
+                        <strong class="font-semibold">Email: </strong>
+                        <%=book.author.email%>
+                    </p>
+                    <p class="text-2xl py-3">
+                        <strong class="font-semibold">Country: </strong>
+                        <%=book.author.country%>
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-left text-2xl py-5 leading-relaxed">
+                    <strong class="font-semibold">Summary: </strong>
+                    <%=book.summary%>
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
