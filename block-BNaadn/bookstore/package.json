@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "build": "npx tailwindcss -i ./public/stylesheets/input.css -o ./public/stylesheets/style.css --watch"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -11,14 +12,18 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "lodash": "^4.17.21",
     "mongoose": "^6.6.5",
     "morgan": "~1.9.1",
     "node-sass-middleware": "^1.0.1",
     "nodemon": "^2.0.20"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.12",
     "eslint": "^8.24.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8"
   }
 }

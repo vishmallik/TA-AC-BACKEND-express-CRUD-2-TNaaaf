@@ -9,22 +9,38 @@
     <title>Add new book</title>
 </head>
 
-<body class="container padding">
-    <header>
-        <h1>Add new book</h1>
+<body>
+    <header class="flex text-center bg-teal-700 text-white relative">
+        <h1 class="text-5xl py-5 mx-auto">Add new book</h1>
+        <nav class="absolute right-6">
+            <a href="/"
+                class="border-solid border-white rounded-lg border-2 py-2 px-4 text-lg hover:text-yellow-400 hover:border-yellow-400">Back
+                to Home</a>
+        </nav>
+
     </header>
-    <main>
+    <main class="bg-yellow-100 h-screen pt-8">
         <form action="/books" method="post" class="flex flex-column">
-            <input type="text" name="title" id="" placeholder="Title">
-            <textarea name="summary" id="" cols="30" rows="10" placeholder="Book Summary"></textarea>
-            <input type="text" name="pages" id="" placeholder="Numbers of Pages">
-            <input type="text" name="publication" id="" placeholder="Publication">
-            <input type="text" name="cover_image" id="" placeholder="Cover image URL">
-            <input type="text" name="category" id="" placeholder="Category">
-            <input type="text" name="author.name" placeholder=" Author name">
-            <input type="text" name="author.email" placeholder=" Author email">
-            <input type="text" name="author.country" id="" placeholder="Author country">
-            <input type="submit">
+            <input class="border-solid border-slate-300 border-2 rounded-lg" type="text" name="title" id=""
+                placeholder="Title">
+            <textarea class="border-solid border-slate-300 border-2 rounded-lg" name="summary" id="" cols="30" rows="10"
+                placeholder="Book Summary"></textarea>
+            <input class="border-solid border-slate-300 border-2 rounded-lg" type="text" name="pages" id=""
+                placeholder="Numbers of Pages">
+            <input class="border-solid border-slate-300 border-2 rounded-lg" type="text" name="publication" id=""
+                placeholder="Publication">
+            <input class="border-solid border-slate-300 border-2 rounded-lg" type="text" name="cover_image" id=""
+                placeholder="Cover image URL">
+            <input class="border-solid border-slate-300 border-2 rounded-lg" type="text" name="category" id=""
+                placeholder="Category">
+            <input class="border-solid border-slate-300 border-2 rounded-lg" type="text" name="author.name"
+                placeholder="Author name">
+            <input class="border-solid border-slate-300 border-2 rounded-lg" type="text" name="author.email"
+                placeholder="Author email">
+            <input class="border-solid border-slate-300 border-2 rounded-lg" type="text" name="author.country" id=""
+                placeholder="Author country">
+            <input class="border-solid border-slate-300 border-2 rounded-lg bg-slate-300 text-xl font-semibold"
+                type="submit">
         </form>
     </main>
     <footer>
